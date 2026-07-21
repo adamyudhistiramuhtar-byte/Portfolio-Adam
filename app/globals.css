@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* === Color tokens from Design.md §2 === */
+  --color-white: #FFFFFF;
+  --color-navy-900: #0A1F3D;
+  --color-navy-700: #123059;
+  --color-navy-400: #85B7EB;
+  --color-navy-100: #E6F1FB;
+  --color-ink: #0A1F3D;
+  --color-paper: #FAFAF8;
+  --color-line: #E4E2DA;
+  --color-muted: #6B6960;
+  --color-muted-2: #8A8778;
+  --color-placeholder-bg: #EFEDE5;
+  --color-placeholder-fg: #A8A594;
+  --color-overlay-navy: rgba(10, 31, 61, 0.88);
+  --color-overlay-text: #B5D4F4;
+
+  /* === Font families === */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* === Border radius system from Design.md §4 === */
+  --radius-sharp: 2px;
+  --radius-pill: 999px;
+}
+
+/* === Spacing scale — tightened per feedback === */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px; /* Reduced from 24px */
+  --space-6: 28px; /* Reduced from 32px */
+  --space-7: 36px; /* Reduced from 40px */
+  --space-8: 48px; /* Reduced from 56px */
+  --space-9: 64px; /* Reduced from 80px */
+}
+
+/* === Base styles === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Respect reduced motion preference === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Focus visible for keyboard navigation === */
+:focus-visible {
+  outline: 2px solid var(--color-navy-400);
+  outline-offset: 2px;
+}
