@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://adamyudhistira.vercel.app",
+      url: "https://portfolioadamyudhistira.netlify.app",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
